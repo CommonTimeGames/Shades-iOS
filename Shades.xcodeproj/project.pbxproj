@@ -487,6 +487,7 @@
 				A678BD2F1988A740006E559D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A678BD301988A740006E559D /* Build configuration list for PBXNativeTarget "ShadesTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +496,7 @@
 				A678BD321988A740006E559D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
