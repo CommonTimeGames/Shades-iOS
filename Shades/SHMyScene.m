@@ -37,6 +37,9 @@ float randFloat()
 @property (nonatomic) int score;
 
 @property (strong, nonatomic) SKLabelNode *promptLabel;
+@property (strong, nonatomic) SKLabelNode *scoreLabel;
+@property (strong, nonatomic) SKLabelNode *restartLabel;
+
 @property (strong, nonatomic) SKSpriteNode *promptSquare;
 
 @property (nonatomic) CGRect boardFrame;
@@ -49,19 +52,8 @@ float randFloat()
 -(void)didMoveToView:(SKView *)view
 {
     self.backgroundColor = [SKColor blackColor];
-    self.currentColor = [self randomColor];
+    [self restart];
     
-    self.squares = [NSMutableArray array];
-
-    self.rounds = 1;
-    [self updateNodePositionsAndChangeColor:YES];
-    
-    SKSpriteNode *firstSquare = (SKSpriteNode *)self.squares[0];
-    firstSquare.color = self.currentColor;
-    firstSquare.name = @"correctNode";
-    self.correctNode = firstSquare;
-    
-    self.state = kShowingColor;
 }
 
 -(void)updateNodePositionsAndChangeColor:(BOOL)changeColor
@@ -111,12 +103,38 @@ float randFloat()
     if(!self.promptLabel){
         self.promptLabel = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next"];
         self.promptLabel.name = @"promptLabel";
-        [self.promptSquare addChild:self.promptLabel];
+        self.promptLabel.zPosition = 1;
+        [self addChild:self.promptLabel];
+    }
+    
+    if(!self.scoreLabel){
+        self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next"];
+        self.scoreLabel.name = @"scoreLabel";
+        self.scoreLabel.zPosition = 1;
+        [self addChild:self.scoreLabel];
+    }
+    
+    if(!self.restartLabel){
+        self.restartLabel = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next"];
+        self.restartLabel.name = @"restartLabel";
+        self.restartLabel.zPosition = 1;
+        [self addChild:self.restartLabel];
     }
     
     self.promptLabel.text = @"Memorize the Color!";
     self.promptLabel.fontSize = 30;
-    self.promptLabel.position = CGPointZero;
+    self.promptLabel.position = CGPointMake(CGRectGetMidX(self.frame),
+                                            CGRectGetMidY(self.frame));
+    
+    self.scoreLabel.text = @"Score: 0";
+    self.scoreLabel.fontSize = 30;
+    self.scoreLabel.position = CGPointMake(65,
+                                           self.frame.size.height - 50);
+    
+    self.restartLabel.text = @"Restart";
+    self.restartLabel.fontSize = 30;
+    self.restartLabel.position = CGPointMake(self.frame.size.width - 55,
+                                           self.frame.size.height - 50);
 
     self.promptSquare.color = self.currentColor;
     self.promptSquare.position = origin;
@@ -193,8 +211,8 @@ float randFloat()
     self.rounds = MIN(MAX_ROUNDS, self.rounds + 1);
     [self growSquares];
     
-    int curIndex = [self.squares indexOfObject:self.correctNode];
-    int newIndex = arc4random() % self.squares.count;
+    NSUInteger curIndex = [self.squares indexOfObject:self.correctNode];
+    NSUInteger newIndex = arc4random() % self.squares.count;
     
     [self.squares exchangeObjectAtIndex:curIndex withObjectAtIndex:newIndex];
     
@@ -227,11 +245,18 @@ float randFloat()
         case kChangingColors:
             break;
         case kGameOver:
+            self.promptLabel.hidden = NO;
+            self.promptLabel.text = @"Game Over!";
             break;
         case kPaused:
             break;
 
     }
+}
+-(void)setScore:(int)score
+{
+    _score = score;
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", _score];
 }
 
 -(void)showColor
@@ -239,11 +264,14 @@ float randFloat()
     self.promptSquare.hidden = NO;
     self.promptLabel.hidden = NO;
     
+    self.promptLabel.text = @"Memorize the Color!";
+    
     SKAction *fadeOut = [SKAction fadeOutWithDuration:0.50];
     SKAction *fadeIn = [SKAction fadeInWithDuration:0.50];
     SKAction *fadeSequence = [SKAction sequence:@[fadeOut, fadeIn]];
     
-    [self.promptSquare runAction:[SKAction repeatAction:fadeSequence count:10 ] completion:^{
+    [self.promptLabel runAction:[SKAction repeatAction:fadeSequence count:10 ] completion:^{
+        self.promptLabel.hidden = YES;
         [self.promptSquare removeFromParent];
         [self nextRound];
         self.state = kChoosingColor;
@@ -275,15 +303,21 @@ float randFloat()
         CGPoint location = [touch locationInNode:self];
         NSLog(@"Touch location: %.1f, %.1f", location.x, location.y);
         
-        SKSpriteNode *node = (SKSpriteNode *)[self nodeAtPoint:location];
+        SKNode *node = (SKSpriteNode *)[self nodeAtPoint:location];
         
-        if(node == self.promptSquare){
+        if(node == self.restartLabel){
+            [self restart];
+        } else if(self.state == kGameOver){
+            return;
+        } else if(node == self.promptSquare){
             
         } else if(node == self.correctNode){
-            NSLog(@"Tapped square: %@", node.name);
+            NSLog(@"Correct square!");
+            self.score++;
             [self nextRound];
         } else {
             NSLog(@"Wrong square!");
+            self.state = kGameOver;
         }
     }
 }
@@ -296,4 +330,24 @@ float randFloat()
                            alpha:1.0];
 }
 
+-(void)restart
+{
+    [self.promptLabel removeAllActions];
+    
+    for(SKSpriteNode *square in self.squares){
+        [square removeFromParent];
+    }
+    
+    self.currentColor = [self randomColor];
+    self.squares = [NSMutableArray array];
+    self.rounds = 1;
+    [self updateNodePositionsAndChangeColor:YES];
+    
+    SKSpriteNode *firstSquare = (SKSpriteNode *)self.squares[0];
+    firstSquare.color = self.currentColor;
+    firstSquare.name = @"correctNode";
+    self.correctNode = firstSquare;
+    
+    self.state = kShowingColor;
+}
 @end

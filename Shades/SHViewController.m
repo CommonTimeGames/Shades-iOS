@@ -17,8 +17,6 @@
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
     
     // Create and configure the scene.
     SKScene * scene = [SHMyScene sceneWithSize:skView.bounds.size];
@@ -36,9 +34,9 @@
 - (NSUInteger)supportedInterfaceOrientations
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAll;
+        return UIInterfaceOrientationMaskPortrait;
     } else {
-        return UIInterfaceOrientationMaskAll;
+        return UIInterfaceOrientationMaskPortrait;
     }
 }
 
