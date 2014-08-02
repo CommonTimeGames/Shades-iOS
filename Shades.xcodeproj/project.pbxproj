@@ -76,8 +76,8 @@
 		A678BD0C1988A740006E559D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		A678BD0E1988A740006E559D /* SHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHViewController.h; sourceTree = "<group>"; };
 		A678BD0F1988A740006E559D /* SHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHViewController.m; sourceTree = "<group>"; };
-		A678BD111988A740006E559D /* SHGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHGameScene.h; sourceTree = "<group>"; };
-		A678BD121988A740006E559D /* SHGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHGameScene.m; sourceTree = "<group>"; };
+		A678BD111988A740006E559D /* SHGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SHGameScene.h; path = Shades/SHGameScene.h; sourceTree = "<group>"; };
+		A678BD121988A740006E559D /* SHGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SHGameScene.m; path = Shades/SHGameScene.m; sourceTree = "<group>"; };
 		A678BD141988A740006E559D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		A678BD161988A740006E559D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A678BD1C1988A740006E559D /* ShadesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShadesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +85,7 @@
 		A678BD251988A740006E559D /* ShadesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShadesTests-Info.plist"; sourceTree = "<group>"; };
 		A678BD271988A740006E559D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A678BD291988A740006E559D /* ShadesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadesTests.m; sourceTree = "<group>"; };
-		A67AA8EB198C9BF20024ED79 /* ShadesOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShadesOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67AA8EB198C9BF20024ED79 /* Shades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shades.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67AA8EC198C9BF20024ED79 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		A67AA8F0198C9BF20024ED79 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A67AA8F1198C9BF20024ED79 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -156,9 +156,10 @@
 		A678BCE81988A740006E559D = {
 			isa = PBXGroup;
 			children = (
-				A678BCFC1988A740006E559D /* Shades */,
+				A67AA929198D4E160024ED79 /* Shades */,
+				A67AA8F3198C9BF20024ED79 /* OS X */,
+				A678BCFC1988A740006E559D /* iOS */,
 				A678BD231988A740006E559D /* ShadesTests */,
-				A67AA8F3198C9BF20024ED79 /* ShadesOSX */,
 				A67AA914198C9BF20024ED79 /* ShadesOSXTests */,
 				A678BCF31988A740006E559D /* Frameworks */,
 				A678BCF21988A740006E559D /* Products */,
@@ -170,7 +171,7 @@
 			children = (
 				A678BCF11988A740006E559D /* Shades.app */,
 				A678BD1C1988A740006E559D /* ShadesTests.xctest */,
-				A67AA8EB198C9BF20024ED79 /* ShadesOSX.app */,
+				A67AA8EB198C9BF20024ED79 /* Shades.app */,
 				A67AA90F198C9BF20024ED79 /* ShadesOSXTests.xctest */,
 			);
 			name = Products;
@@ -190,7 +191,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A678BCFC1988A740006E559D /* Shades */ = {
+		A678BCFC1988A740006E559D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				A678BD051988A740006E559D /* SHAppDelegate.h */,
@@ -199,14 +200,13 @@
 				A678BD0B1988A740006E559D /* Main_iPad.storyboard */,
 				A678BD0E1988A740006E559D /* SHViewController.h */,
 				A678BD0F1988A740006E559D /* SHViewController.m */,
-				A678BD111988A740006E559D /* SHGameScene.h */,
-				A678BD121988A740006E559D /* SHGameScene.m */,
 				A678BD141988A740006E559D /* Spaceship.png */,
 				A678BD161988A740006E559D /* Images.xcassets */,
 				A678BCFD1988A740006E559D /* Supporting Files */,
 				A67AA922198C9C950024ED79 /* SHGameSceneiOS.h */,
 				A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */,
 			);
+			name = iOS;
 			path = Shades;
 			sourceTree = "<group>";
 		};
@@ -249,7 +249,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		A67AA8F3198C9BF20024ED79 /* ShadesOSX */ = {
+		A67AA8F3198C9BF20024ED79 /* OS X */ = {
 			isa = PBXGroup;
 			children = (
 				A67AA8FF198C9BF20024ED79 /* MainMenu.xib */,
@@ -261,8 +261,9 @@
 				A67AA909198C9BF20024ED79 /* Images.xcassets */,
 				A67AA8F4198C9BF20024ED79 /* Supporting Files */,
 			);
+			name = "OS X";
 			path = ShadesOSX;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		A67AA8F4198C9BF20024ED79 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -292,6 +293,15 @@
 				A67AA917198C9BF20024ED79 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A67AA929198D4E160024ED79 /* Shades */ = {
+			isa = PBXGroup;
+			children = (
+				A678BD111988A740006E559D /* SHGameScene.h */,
+				A678BD121988A740006E559D /* SHGameScene.m */,
+			);
+			name = Shades;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,7 +356,7 @@
 			);
 			name = ShadesOSX;
 			productName = ShadesOSX;
-			productReference = A67AA8EB198C9BF20024ED79 /* ShadesOSX.app */;
+			productReference = A67AA8EB198C9BF20024ED79 /* Shades.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A67AA90E198C9BF20024ED79 /* ShadesOSXTests */ = {
@@ -731,7 +741,7 @@
 				);
 				INFOPLIST_FILE = "ShadesOSX/ShadesOSX-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Shades;
 				SDKROOT = macosx;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -753,7 +763,7 @@
 				GCC_PREFIX_HEADER = "ShadesOSX/ShadesOSX-Prefix.pch";
 				INFOPLIST_FILE = "ShadesOSX/ShadesOSX-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Shades;
 				SDKROOT = macosx;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;

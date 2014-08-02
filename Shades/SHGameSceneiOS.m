@@ -25,7 +25,8 @@
             return;
         } else if(node == self.promptSquare){
             
-        } else if(node == self.correctNode){
+        } else if(node == self.correctNode
+                    && self.state == kChoosingColor){
             NSLog(@"Correct square!");
             self.score++;
             [self nextRound];

@@ -222,6 +222,8 @@ float randFloat()
         case kGameOver:
             self.promptLabel.hidden = NO;
             self.promptLabel.text = @"Game Over!";
+            self.promptLabel.fontSize = 45;
+            self.promptLabel.fontColor = [SKColor whiteColor];
             break;
         case kPaused:
             break;
@@ -264,7 +266,8 @@ float randFloat()
         node.position = CGPointZero;
         node.anchorPoint = CGPointZero;
         node.size = CGSizeZero;
-        node.name = [NSString stringWithFormat:@"square %lu", self.squares.count + 1];
+        node.name = [NSString stringWithFormat:@"square %d",
+                     self.squares.count + 1];
         
         [self addChild:node];
         [self.squares addObject:node];
@@ -292,6 +295,8 @@ float randFloat()
     self.rounds = 1;
     [self updateNodePositionsAndChangeColor:YES];
     
+    self.promptLabel.fontColor = [self colorForTextWithBackgroundColor:self.currentColor];
+    
     SKSpriteNode *firstSquare = (SKSpriteNode *)self.squares[0];
     firstSquare.color = self.currentColor;
     firstSquare.name = @"correctNode";
@@ -299,4 +304,21 @@ float randFloat()
     
     self.state = kShowingColor;
 }
+
+-(SKColor *)colorForTextWithBackgroundColor:(SKColor *)color
+{
+    CGFloat r = 0.0;
+    CGFloat g = 0.0;
+    CGFloat b = 0.0;
+    CGFloat a = 0.0;
+    
+    [color getRed:&r green:&g blue:&b alpha:&a];
+    
+    float brightness = ((r*255*299)+(g*255*587)+(b*255*114))/1000;
+    
+    NSLog(@"Brightness value: %f", brightness);
+    
+    return brightness >= 128 ? [SKColor blackColor] : [SKColor whiteColor];
+}
+
 @end
