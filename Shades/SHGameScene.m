@@ -6,48 +6,20 @@
 //  Copyright (c) 2014 Common Time Games. All rights reserved.
 //
 
-#import "SHMyScene.h"
+#import "SHGameScene.h"
 #define MAX_ROUNDS 15
 #define SHOW_COLOR_TIME 5
-
-typedef enum {
-    kShowingColor,
-    kChoosingColor,
-    kChangingColors,
-    kPaused,
-    kGameOver
-} GameState;
 
 float randFloat()
 {
     return (float)arc4random() / UINT_MAX ;
 }
 
-@interface SHMyScene ()
-
-@property (nonatomic) GameState state;
-
-@property (nonatomic) int rowCount;
-@property (nonatomic) int columnCount;
-
-@property (nonatomic) SKColor *currentColor;
-@property (nonatomic) SKNode *correctNode;
-
-@property (nonatomic) int rounds;
-@property (nonatomic) int score;
-
-@property (strong, nonatomic) SKLabelNode *promptLabel;
-@property (strong, nonatomic) SKLabelNode *scoreLabel;
-@property (strong, nonatomic) SKLabelNode *restartLabel;
-
-@property (strong, nonatomic) SKSpriteNode *promptSquare;
-
-@property (nonatomic) CGRect boardFrame;
-@property (nonatomic) NSMutableArray *squares;
+@interface SHGameScene ()
 
 @end
 
-@implementation SHMyScene
+@implementation SHGameScene
 
 -(void)didMoveToView:(SKView *)view
 {
@@ -198,7 +170,10 @@ float randFloat()
     SKAction *wait = [SKAction waitForDuration:duration/2];
     SKAction *moveToDest = [SKAction moveTo:destination
                                    duration:duration];
-    SKAction *changeColor = [SKAction colorizeWithColor:color colorBlendFactor:1.0 duration:duration];
+    
+    SKAction *changeColor = [SKAction colorizeWithColor:color
+                                       colorBlendFactor:1.0
+                                               duration:duration];
     
     SKAction *moveGroup = [SKAction group:@[moveTo, shrink, changeColor]];
     SKAction *sequence = [SKAction sequence:@[moveGroup, wait, moveToDest]];
@@ -289,36 +264,10 @@ float randFloat()
         node.position = CGPointZero;
         node.anchorPoint = CGPointZero;
         node.size = CGSizeZero;
-        node.name = [NSString stringWithFormat:@"square %d", self.squares.count + 1];
+        node.name = [NSString stringWithFormat:@"square %lu", self.squares.count + 1];
         
         [self addChild:node];
         [self.squares addObject:node];
-    }
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        NSLog(@"Touch location: %.1f, %.1f", location.x, location.y);
-        
-        SKNode *node = (SKSpriteNode *)[self nodeAtPoint:location];
-        
-        if(node == self.restartLabel){
-            [self restart];
-        } else if(self.state == kGameOver){
-            return;
-        } else if(node == self.promptSquare){
-            
-        } else if(node == self.correctNode){
-            NSLog(@"Correct square!");
-            self.score++;
-            [self nextRound];
-        } else {
-            NSLog(@"Wrong square!");
-            self.state = kGameOver;
-        }
     }
 }
 

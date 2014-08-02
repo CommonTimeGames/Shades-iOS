@@ -17,7 +17,7 @@
 		A678BD0A1988A740006E559D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A678BD081988A740006E559D /* Main_iPhone.storyboard */; };
 		A678BD0D1988A740006E559D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A678BD0B1988A740006E559D /* Main_iPad.storyboard */; };
 		A678BD101988A740006E559D /* SHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD0F1988A740006E559D /* SHViewController.m */; };
-		A678BD131988A740006E559D /* SHMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD121988A740006E559D /* SHMyScene.m */; };
+		A678BD131988A740006E559D /* SHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD121988A740006E559D /* SHGameScene.m */; };
 		A678BD151988A740006E559D /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A678BD141988A740006E559D /* Spaceship.png */; };
 		A678BD171988A740006E559D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A678BD161988A740006E559D /* Images.xcassets */; };
 		A678BD1E1988A740006E559D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BD1D1988A740006E559D /* XCTest.framework */; };
@@ -25,6 +25,22 @@
 		A678BD201988A740006E559D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BCF81988A740006E559D /* UIKit.framework */; };
 		A678BD281988A740006E559D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A678BD261988A740006E559D /* InfoPlist.strings */; };
 		A678BD2A1988A740006E559D /* ShadesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD291988A740006E559D /* ShadesTests.m */; };
+		A67AA8ED198C9BF20024ED79 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67AA8EC198C9BF20024ED79 /* Cocoa.framework */; };
+		A67AA8EE198C9BF20024ED79 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BCFA1988A740006E559D /* SpriteKit.framework */; };
+		A67AA8F8198C9BF20024ED79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67AA8F6198C9BF20024ED79 /* InfoPlist.strings */; };
+		A67AA8FA198C9BF20024ED79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA8F9198C9BF20024ED79 /* main.m */; };
+		A67AA8FE198C9BF20024ED79 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A67AA8FC198C9BF20024ED79 /* Credits.rtf */; };
+		A67AA900198C9BF20024ED79 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67AA8FF198C9BF20024ED79 /* MainMenu.xib */; };
+		A67AA905198C9BF20024ED79 /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA904198C9BF20024ED79 /* SHAppDelegate.m */; };
+		A67AA908198C9BF20024ED79 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A67AA907198C9BF20024ED79 /* Spaceship.png */; };
+		A67AA90A198C9BF20024ED79 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67AA909198C9BF20024ED79 /* Images.xcassets */; };
+		A67AA910198C9BF20024ED79 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BD1D1988A740006E559D /* XCTest.framework */; };
+		A67AA911198C9BF20024ED79 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67AA8EC198C9BF20024ED79 /* Cocoa.framework */; };
+		A67AA919198C9BF20024ED79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67AA917198C9BF20024ED79 /* InfoPlist.strings */; };
+		A67AA91B198C9BF20024ED79 /* ShadesOSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA91A198C9BF20024ED79 /* ShadesOSXTests.m */; };
+		A67AA924198C9C950024ED79 /* SHGameSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */; };
+		A67AA927198C9D690024ED79 /* SHGameSceneOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */; };
+		A67AA928198C9DC50024ED79 /* SHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD121988A740006E559D /* SHGameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +50,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A678BCF01988A740006E559D;
 			remoteInfo = Shades;
+		};
+		A67AA912198C9BF20024ED79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A678BCE91988A740006E559D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A67AA8EA198C9BF20024ED79;
+			remoteInfo = ShadesOSX;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,8 +76,8 @@
 		A678BD0C1988A740006E559D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		A678BD0E1988A740006E559D /* SHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHViewController.h; sourceTree = "<group>"; };
 		A678BD0F1988A740006E559D /* SHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHViewController.m; sourceTree = "<group>"; };
-		A678BD111988A740006E559D /* SHMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMyScene.h; sourceTree = "<group>"; };
-		A678BD121988A740006E559D /* SHMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHMyScene.m; sourceTree = "<group>"; };
+		A678BD111988A740006E559D /* SHGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHGameScene.h; sourceTree = "<group>"; };
+		A678BD121988A740006E559D /* SHGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHGameScene.m; sourceTree = "<group>"; };
 		A678BD141988A740006E559D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		A678BD161988A740006E559D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A678BD1C1988A740006E559D /* ShadesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShadesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +85,29 @@
 		A678BD251988A740006E559D /* ShadesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShadesTests-Info.plist"; sourceTree = "<group>"; };
 		A678BD271988A740006E559D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A678BD291988A740006E559D /* ShadesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadesTests.m; sourceTree = "<group>"; };
+		A67AA8EB198C9BF20024ED79 /* ShadesOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShadesOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67AA8EC198C9BF20024ED79 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		A67AA8F0198C9BF20024ED79 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A67AA8F1198C9BF20024ED79 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A67AA8F2198C9BF20024ED79 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A67AA8F5198C9BF20024ED79 /* ShadesOSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShadesOSX-Info.plist"; sourceTree = "<group>"; };
+		A67AA8F7198C9BF20024ED79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A67AA8F9198C9BF20024ED79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A67AA8FB198C9BF20024ED79 /* ShadesOSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShadesOSX-Prefix.pch"; sourceTree = "<group>"; };
+		A67AA8FD198C9BF20024ED79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A67AA8FF198C9BF20024ED79 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		A67AA904198C9BF20024ED79 /* SHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
+		A67AA906198C9BF20024ED79 /* SHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
+		A67AA907198C9BF20024ED79 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		A67AA909198C9BF20024ED79 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A67AA90F198C9BF20024ED79 /* ShadesOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShadesOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67AA916198C9BF20024ED79 /* ShadesOSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShadesOSXTests-Info.plist"; sourceTree = "<group>"; };
+		A67AA918198C9BF20024ED79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A67AA91A198C9BF20024ED79 /* ShadesOSXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadesOSXTests.m; sourceTree = "<group>"; };
+		A67AA922198C9C950024ED79 /* SHGameSceneiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGameSceneiOS.h; sourceTree = "<group>"; };
+		A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGameSceneiOS.m; sourceTree = "<group>"; };
+		A67AA925198C9D690024ED79 /* SHGameSceneOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGameSceneOSX.h; sourceTree = "<group>"; };
+		A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGameSceneOSX.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +132,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A67AA8E8198C9BF20024ED79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67AA8EE198C9BF20024ED79 /* SpriteKit.framework in Frameworks */,
+				A67AA8ED198C9BF20024ED79 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A67AA90C198C9BF20024ED79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67AA911198C9BF20024ED79 /* Cocoa.framework in Frameworks */,
+				A67AA910198C9BF20024ED79 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,6 +158,8 @@
 			children = (
 				A678BCFC1988A740006E559D /* Shades */,
 				A678BD231988A740006E559D /* ShadesTests */,
+				A67AA8F3198C9BF20024ED79 /* ShadesOSX */,
+				A67AA914198C9BF20024ED79 /* ShadesOSXTests */,
 				A678BCF31988A740006E559D /* Frameworks */,
 				A678BCF21988A740006E559D /* Products */,
 			);
@@ -104,6 +170,8 @@
 			children = (
 				A678BCF11988A740006E559D /* Shades.app */,
 				A678BD1C1988A740006E559D /* ShadesTests.xctest */,
+				A67AA8EB198C9BF20024ED79 /* ShadesOSX.app */,
+				A67AA90F198C9BF20024ED79 /* ShadesOSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +184,8 @@
 				A678BCF81988A740006E559D /* UIKit.framework */,
 				A678BCFA1988A740006E559D /* SpriteKit.framework */,
 				A678BD1D1988A740006E559D /* XCTest.framework */,
+				A67AA8EC198C9BF20024ED79 /* Cocoa.framework */,
+				A67AA8EF198C9BF20024ED79 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,11 +199,13 @@
 				A678BD0B1988A740006E559D /* Main_iPad.storyboard */,
 				A678BD0E1988A740006E559D /* SHViewController.h */,
 				A678BD0F1988A740006E559D /* SHViewController.m */,
-				A678BD111988A740006E559D /* SHMyScene.h */,
-				A678BD121988A740006E559D /* SHMyScene.m */,
+				A678BD111988A740006E559D /* SHGameScene.h */,
+				A678BD121988A740006E559D /* SHGameScene.m */,
 				A678BD141988A740006E559D /* Spaceship.png */,
 				A678BD161988A740006E559D /* Images.xcassets */,
 				A678BCFD1988A740006E559D /* Supporting Files */,
+				A67AA922198C9C950024ED79 /* SHGameSceneiOS.h */,
+				A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */,
 			);
 			path = Shades;
 			sourceTree = "<group>";
@@ -163,6 +235,61 @@
 			children = (
 				A678BD251988A740006E559D /* ShadesTests-Info.plist */,
 				A678BD261988A740006E559D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A67AA8EF198C9BF20024ED79 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A67AA8F0198C9BF20024ED79 /* AppKit.framework */,
+				A67AA8F1198C9BF20024ED79 /* CoreData.framework */,
+				A67AA8F2198C9BF20024ED79 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A67AA8F3198C9BF20024ED79 /* ShadesOSX */ = {
+			isa = PBXGroup;
+			children = (
+				A67AA8FF198C9BF20024ED79 /* MainMenu.xib */,
+				A67AA904198C9BF20024ED79 /* SHAppDelegate.m */,
+				A67AA906198C9BF20024ED79 /* SHAppDelegate.h */,
+				A67AA925198C9D690024ED79 /* SHGameSceneOSX.h */,
+				A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */,
+				A67AA907198C9BF20024ED79 /* Spaceship.png */,
+				A67AA909198C9BF20024ED79 /* Images.xcassets */,
+				A67AA8F4198C9BF20024ED79 /* Supporting Files */,
+			);
+			path = ShadesOSX;
+			sourceTree = "<group>";
+		};
+		A67AA8F4198C9BF20024ED79 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A67AA8F5198C9BF20024ED79 /* ShadesOSX-Info.plist */,
+				A67AA8F6198C9BF20024ED79 /* InfoPlist.strings */,
+				A67AA8F9198C9BF20024ED79 /* main.m */,
+				A67AA8FB198C9BF20024ED79 /* ShadesOSX-Prefix.pch */,
+				A67AA8FC198C9BF20024ED79 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A67AA914198C9BF20024ED79 /* ShadesOSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				A67AA91A198C9BF20024ED79 /* ShadesOSXTests.m */,
+				A67AA915198C9BF20024ED79 /* Supporting Files */,
+			);
+			path = ShadesOSXTests;
+			sourceTree = "<group>";
+		};
+		A67AA915198C9BF20024ED79 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A67AA916198C9BF20024ED79 /* ShadesOSXTests-Info.plist */,
+				A67AA917198C9BF20024ED79 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -205,6 +332,41 @@
 			productReference = A678BD1C1988A740006E559D /* ShadesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A67AA8EA198C9BF20024ED79 /* ShadesOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A67AA920198C9BF20024ED79 /* Build configuration list for PBXNativeTarget "ShadesOSX" */;
+			buildPhases = (
+				A67AA8E7198C9BF20024ED79 /* Sources */,
+				A67AA8E8198C9BF20024ED79 /* Frameworks */,
+				A67AA8E9198C9BF20024ED79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShadesOSX;
+			productName = ShadesOSX;
+			productReference = A67AA8EB198C9BF20024ED79 /* ShadesOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A67AA90E198C9BF20024ED79 /* ShadesOSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A67AA921198C9BF20024ED79 /* Build configuration list for PBXNativeTarget "ShadesOSXTests" */;
+			buildPhases = (
+				A67AA90B198C9BF20024ED79 /* Sources */,
+				A67AA90C198C9BF20024ED79 /* Frameworks */,
+				A67AA90D198C9BF20024ED79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A67AA913198C9BF20024ED79 /* PBXTargetDependency */,
+			);
+			name = ShadesOSXTests;
+			productName = ShadesOSXTests;
+			productReference = A67AA90F198C9BF20024ED79 /* ShadesOSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,6 +381,9 @@
 						DevelopmentTeam = 7A26H29422;
 					};
 					A678BD1B1988A740006E559D = {
+						TestTargetID = A678BCF01988A740006E559D;
+					};
+					A67AA90E198C9BF20024ED79 = {
 						TestTargetID = A678BCF01988A740006E559D;
 					};
 				};
@@ -238,6 +403,8 @@
 			targets = (
 				A678BCF01988A740006E559D /* Shades */,
 				A678BD1B1988A740006E559D /* ShadesTests */,
+				A67AA8EA198C9BF20024ED79 /* ShadesOSX */,
+				A67AA90E198C9BF20024ED79 /* ShadesOSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,6 +430,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A67AA8E9198C9BF20024ED79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67AA908198C9BF20024ED79 /* Spaceship.png in Resources */,
+				A67AA90A198C9BF20024ED79 /* Images.xcassets in Resources */,
+				A67AA8F8198C9BF20024ED79 /* InfoPlist.strings in Resources */,
+				A67AA8FE198C9BF20024ED79 /* Credits.rtf in Resources */,
+				A67AA900198C9BF20024ED79 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A67AA90D198C9BF20024ED79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67AA919198C9BF20024ED79 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -271,8 +458,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A678BD031988A740006E559D /* main.m in Sources */,
-				A678BD131988A740006E559D /* SHMyScene.m in Sources */,
+				A678BD131988A740006E559D /* SHGameScene.m in Sources */,
 				A678BD101988A740006E559D /* SHViewController.m in Sources */,
+				A67AA924198C9C950024ED79 /* SHGameSceneiOS.m in Sources */,
 				A678BD071988A740006E559D /* SHAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +473,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A67AA8E7198C9BF20024ED79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67AA927198C9D690024ED79 /* SHGameSceneOSX.m in Sources */,
+				A67AA8FA198C9BF20024ED79 /* main.m in Sources */,
+				A67AA905198C9BF20024ED79 /* SHAppDelegate.m in Sources */,
+				A67AA928198C9DC50024ED79 /* SHGameScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A67AA90B198C9BF20024ED79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67AA91B198C9BF20024ED79 /* ShadesOSXTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -292,6 +499,11 @@
 			isa = PBXTargetDependency;
 			target = A678BCF01988A740006E559D /* Shades */;
 			targetProxy = A678BD211988A740006E559D /* PBXContainerItemProxy */;
+		};
+		A67AA913198C9BF20024ED79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A67AA8EA198C9BF20024ED79 /* ShadesOSX */;
+			targetProxy = A67AA912198C9BF20024ED79 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -324,6 +536,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				A678BD271988A740006E559D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A67AA8F6198C9BF20024ED79 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A67AA8F7198C9BF20024ED79 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A67AA8FC198C9BF20024ED79 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A67AA8FD198C9BF20024ED79 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A67AA917198C9BF20024ED79 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A67AA918198C9BF20024ED79 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -477,6 +713,100 @@
 			};
 			name = Release;
 		};
+		A67AA91C198C9BF20024ED79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShadesOSX/ShadesOSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ShadesOSX/ShadesOSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A67AA91D198C9BF20024ED79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShadesOSX/ShadesOSX-Prefix.pch";
+				INFOPLIST_FILE = "ShadesOSX/ShadesOSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A67AA91E198C9BF20024ED79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Shades.app/Shades";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShadesOSX/ShadesOSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ShadesOSXTests/ShadesOSXTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A67AA91F198C9BF20024ED79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Shades.app/Shades";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShadesOSX/ShadesOSX-Prefix.pch";
+				INFOPLIST_FILE = "ShadesOSXTests/ShadesOSXTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -506,6 +836,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A67AA920198C9BF20024ED79 /* Build configuration list for PBXNativeTarget "ShadesOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A67AA91C198C9BF20024ED79 /* Debug */,
+				A67AA91D198C9BF20024ED79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A67AA921198C9BF20024ED79 /* Build configuration list for PBXNativeTarget "ShadesOSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A67AA91E198C9BF20024ED79 /* Debug */,
+				A67AA91F198C9BF20024ED79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ShadesOSX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>A678BD1B1988A740006E559D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A67AA8EA198C9BF20024ED79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A67AA90E198C9BF20024ED79</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,7 +7,7 @@
 //
 
 #import "SHViewController.h"
-#import "SHMyScene.h"
+#import "SHGameSceneiOS.h"
 
 @implementation SHViewController
 
@@ -19,7 +19,7 @@
     SKView * skView = (SKView *)self.view;
     
     // Create and configure the scene.
-    SKScene * scene = [SHMyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [SHGameSceneiOS sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeResizeFill;
     
     // Present the scene.
