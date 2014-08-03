@@ -25,6 +25,7 @@ typedef enum {
 @property (nonatomic) int columnCount;
 
 @property (strong, nonatomic) SKLabelNode *promptLabel;
+@property (strong, nonatomic) SKLabelNode *quitLabel;
 @property (strong, nonatomic) SKLabelNode *scoreLabel;
 @property (strong, nonatomic) SKLabelNode *restartLabel;
 
@@ -43,6 +44,7 @@ typedef enum {
 
 -(void)restart;
 -(void)nextRound;
+-(void)quitGame;
 -(void)userDidTouchLocation: (CGPoint)location;
 
 @end

@@ -251,6 +251,19 @@ float randFloat()
             self.promptLabel.fontSize = 45;
             self.promptLabel.fontColor =
                 [self colorForTextWithBackgroundColor:self.currentColor];
+            
+            self.quitLabel = [SKLabelNode node];
+            self.quitLabel.fontName = @"Avenir Next";
+            self.quitLabel.text = @"Quit";
+            self.quitLabel.fontSize = 30;
+            self.quitLabel.fontColor = self.promptLabel.fontColor;
+            
+            self.quitLabel.position = CGPointMake(self.promptLabel.position.x,
+                                                  self.promptLabel.position.y - 45);
+            self.quitLabel.zPosition = 1;
+            
+            [self addChild:self.quitLabel];
+
             break;
         case kPaused:
             break;
@@ -347,6 +360,11 @@ float randFloat()
     return brightness >= 128 ? [SKColor blackColor] : [SKColor whiteColor];
 }
 
+-(void)quitGame
+{
+    
+}
+
 -(void)userDidTouchLocation: (CGPoint)location
 {
     SKNode *node = (SKSpriteNode *)[self nodeAtPoint:location];
@@ -355,7 +373,9 @@ float randFloat()
         NSLog(@"Touched node: %@", node.name);
     }
     
-    if(node == self.restartLabel){
+    if(node == self.quitLabel){
+        [self quitGame];
+    } else if(node == self.restartLabel){
         [self restart];
     } else if(self.state == kGameOver){
         return;

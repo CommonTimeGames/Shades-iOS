@@ -32,7 +32,6 @@
 		A67AA8FE198C9BF20024ED79 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A67AA8FC198C9BF20024ED79 /* Credits.rtf */; };
 		A67AA900198C9BF20024ED79 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67AA8FF198C9BF20024ED79 /* MainMenu.xib */; };
 		A67AA905198C9BF20024ED79 /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA904198C9BF20024ED79 /* SHAppDelegate.m */; };
-		A67AA908198C9BF20024ED79 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A67AA907198C9BF20024ED79 /* Spaceship.png */; };
 		A67AA90A198C9BF20024ED79 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67AA909198C9BF20024ED79 /* Images.xcassets */; };
 		A67AA910198C9BF20024ED79 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BD1D1988A740006E559D /* XCTest.framework */; };
 		A67AA911198C9BF20024ED79 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67AA8EC198C9BF20024ED79 /* Cocoa.framework */; };
@@ -102,7 +101,6 @@
 		A67AA8FF198C9BF20024ED79 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		A67AA904198C9BF20024ED79 /* SHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
 		A67AA906198C9BF20024ED79 /* SHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
-		A67AA907198C9BF20024ED79 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		A67AA909198C9BF20024ED79 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A67AA90F198C9BF20024ED79 /* ShadesOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShadesOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67AA916198C9BF20024ED79 /* ShadesOSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShadesOSXTests-Info.plist"; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 				A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */,
 				A6A40695198DEE610026F539 /* SHTitleSceneOSX.h */,
 				A6A40696198DEE610026F539 /* SHTitleSceneOSX.m */,
-				A67AA907198C9BF20024ED79 /* Spaceship.png */,
 				A67AA909198C9BF20024ED79 /* Images.xcassets */,
 				A67AA8F4198C9BF20024ED79 /* Supporting Files */,
 			);
@@ -460,7 +457,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A67AA908198C9BF20024ED79 /* Spaceship.png in Resources */,
 				A67AA90A198C9BF20024ED79 /* Images.xcassets in Resources */,
 				A67AA8F8198C9BF20024ED79 /* InfoPlist.strings in Resources */,
 				A67AA8FE198C9BF20024ED79 /* Credits.rtf in Resources */,
@@ -674,13 +670,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nigel Brady (7A26H29422)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nigel Brady (7A26H29422)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Shades/Shades-Prefix.pch";
 				INFOPLIST_FILE = "Shades/Shades-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "960AF1CE-52D9-4DDD-9D08-607BB261EFDE";
+				PROVISIONING_PROFILE = "44D4BA55-23EF-404E-9990-18C0352AF6F7";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -691,8 +687,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nigel Brady (7A26H29422)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Shades/Shades-Prefix.pch";
 				INFOPLIST_FILE = "Shades/Shades-Info.plist";

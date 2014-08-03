@@ -7,6 +7,7 @@
 //
 
 #import "SHGameSceneOSX.h"
+#import "SHTitleSceneOSX.h"
 
 @implementation SHGameSceneOSX
 
@@ -17,5 +18,15 @@
     [self userDidTouchLocation:location];
 }
 
-
+-(void)quitGame
+{
+    SKTransition *reveal = [SKTransition flipVerticalWithDuration:1.0];
+    /* Pick a size for the scene */
+    SKScene *scene = [SHTitleSceneOSX sceneWithSize:CGSizeMake(1024, 768)];
+    
+    /* Set the scale mode to scale to fit the window */
+    scene.scaleMode = SKSceneScaleModeAspectFit;
+    
+    [self.view presentScene:scene transition:reveal];
+}
 @end
