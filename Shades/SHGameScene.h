@@ -45,6 +45,7 @@ typedef enum {
 -(void)restart;
 -(void)nextRound;
 -(void)quitGame;
+-(void)updateNodePositionsAndChangeColor:(BOOL)changeColor;
 -(void)userDidTouchLocation: (CGPoint)location;
 
 @end

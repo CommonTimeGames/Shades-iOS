@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Common Time Games. All rights reserved.
 //
 
+#import "SHInstructionSceneOSX.h"
 #import "SHTitleSceneOSX.h"
 #import "SHGameSceneOSX.h"
 
@@ -27,6 +28,18 @@
     /* Set the scale mode to scale to fit the window */
     scene.scaleMode = SKSceneScaleModeAspectFit;
 
+    [self.view presentScene:scene transition:reveal];
+}
+
+-(void)instructions
+{
+    SKTransition *reveal = [SKTransition doorwayWithDuration:1.0];
+    /* Pick a size for the scene */
+    SKScene *scene = [SHInstructionSceneOSX sceneWithSize:CGSizeMake(1024, 768)];
+    
+    /* Set the scale mode to scale to fit the window */
+    scene.scaleMode = SKSceneScaleModeAspectFit;
+    
     [self.view presentScene:scene transition:reveal];
 }
 

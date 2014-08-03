@@ -112,6 +112,10 @@
     NSLog(@"Change scene!");
 }
 
+-(void)instructions
+{
+    
+}
 -(void)touchInLocation:(CGPoint) location
 {
     SKNode *node = [self nodeAtPoint:location];
@@ -121,7 +125,7 @@
         [self playGame];
     } else if(node == self.instructionLabel){
         NSLog(@"Instructions!");
-        
+        [self instructions];
     } else if([node.name isEqualToString:@"randomSquare"]){
         SKAction *rotate = [SKAction rotateByAngle:M_PI duration:1.0];
         [node runAction:rotate];

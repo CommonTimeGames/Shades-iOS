@@ -17,5 +17,6 @@
 
 -(void)touchInLocation:(CGPoint) location;
 -(void)playGame;
+-(void)instructions;
 
 @end

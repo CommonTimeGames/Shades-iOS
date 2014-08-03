@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Common Time Games. All rights reserved.
 //
 
+#import "SHInstructionSceneiOS.h"
 #import "SHTitleSceneiOS.h"
 #import "SHGameSceneiOS.h"
 
@@ -29,6 +30,20 @@
     
     // Create and configure the scene.
     SKScene * scene = [SHGameSceneiOS sceneWithSize:skView.bounds.size];
+    scene.scaleMode = SKSceneScaleModeResizeFill;
+    
+    [self.view presentScene:scene transition:reveal];
+}
+
+-(void)instructions
+{
+    SKTransition *reveal = [SKTransition doorwayWithDuration:1.0];
+    
+    // Configure the view.
+    SKView * skView = (SKView *)self.view;
+    
+    // Create and configure the scene.
+    SKScene * scene = [SHInstructionSceneiOS sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeResizeFill;
     
     [self.view presentScene:scene transition:reveal];
