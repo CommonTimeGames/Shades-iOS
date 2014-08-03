@@ -39,6 +39,8 @@ typedef enum {
 @property (nonatomic) SKColor *currentColor;
 @property (nonatomic) SKSpriteNode *correctNode;
 
++(SKColor *)randomColor;
+
 -(void)restart;
 -(void)nextRound;
 -(void)userDidTouchLocation: (CGPoint)location;

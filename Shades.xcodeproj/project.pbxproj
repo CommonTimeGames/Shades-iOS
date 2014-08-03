@@ -41,6 +41,10 @@
 		A67AA924198C9C950024ED79 /* SHGameSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */; };
 		A67AA927198C9D690024ED79 /* SHGameSceneOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */; };
 		A67AA928198C9DC50024ED79 /* SHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD121988A740006E559D /* SHGameScene.m */; };
+		A6A40693198DDE020026F539 /* SHTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A40692198DDE020026F539 /* SHTitleScene.m */; };
+		A6A40694198DDFEC0026F539 /* SHTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A40692198DDE020026F539 /* SHTitleScene.m */; };
+		A6A40698198DEF070026F539 /* SHTitleSceneOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A40696198DEE610026F539 /* SHTitleSceneOSX.m */; };
+		A6A4069B198DEFDF0026F539 /* SHTitleSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A4069A198DEFDF0026F539 /* SHTitleSceneiOS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +112,12 @@
 		A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGameSceneiOS.m; sourceTree = "<group>"; };
 		A67AA925198C9D690024ED79 /* SHGameSceneOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGameSceneOSX.h; sourceTree = "<group>"; };
 		A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGameSceneOSX.m; sourceTree = "<group>"; };
+		A6A40691198DDE020026F539 /* SHTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTitleScene.h; sourceTree = "<group>"; };
+		A6A40692198DDE020026F539 /* SHTitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTitleScene.m; sourceTree = "<group>"; };
+		A6A40695198DEE610026F539 /* SHTitleSceneOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTitleSceneOSX.h; sourceTree = "<group>"; };
+		A6A40696198DEE610026F539 /* SHTitleSceneOSX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTitleSceneOSX.m; sourceTree = "<group>"; };
+		A6A40699198DEFDF0026F539 /* SHTitleSceneiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTitleSceneiOS.h; sourceTree = "<group>"; };
+		A6A4069A198DEFDF0026F539 /* SHTitleSceneiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTitleSceneiOS.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +215,8 @@
 				A678BCFD1988A740006E559D /* Supporting Files */,
 				A67AA922198C9C950024ED79 /* SHGameSceneiOS.h */,
 				A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */,
+				A6A40699198DEFDF0026F539 /* SHTitleSceneiOS.h */,
+				A6A4069A198DEFDF0026F539 /* SHTitleSceneiOS.m */,
 			);
 			name = iOS;
 			path = Shades;
@@ -257,6 +269,8 @@
 				A67AA906198C9BF20024ED79 /* SHAppDelegate.h */,
 				A67AA925198C9D690024ED79 /* SHGameSceneOSX.h */,
 				A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */,
+				A6A40695198DEE610026F539 /* SHTitleSceneOSX.h */,
+				A6A40696198DEE610026F539 /* SHTitleSceneOSX.m */,
 				A67AA907198C9BF20024ED79 /* Spaceship.png */,
 				A67AA909198C9BF20024ED79 /* Images.xcassets */,
 				A67AA8F4198C9BF20024ED79 /* Supporting Files */,
@@ -300,6 +314,8 @@
 			children = (
 				A678BD111988A740006E559D /* SHGameScene.h */,
 				A678BD121988A740006E559D /* SHGameScene.m */,
+				A6A40691198DDE020026F539 /* SHTitleScene.h */,
+				A6A40692198DDE020026F539 /* SHTitleScene.m */,
 			);
 			name = Shades;
 			sourceTree = "<group>";
@@ -471,7 +487,9 @@
 				A678BD131988A740006E559D /* SHGameScene.m in Sources */,
 				A678BD101988A740006E559D /* SHViewController.m in Sources */,
 				A67AA924198C9C950024ED79 /* SHGameSceneiOS.m in Sources */,
+				A6A40693198DDE020026F539 /* SHTitleScene.m in Sources */,
 				A678BD071988A740006E559D /* SHAppDelegate.m in Sources */,
+				A6A4069B198DEFDF0026F539 /* SHTitleSceneiOS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,9 +506,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A67AA927198C9D690024ED79 /* SHGameSceneOSX.m in Sources */,
+				A6A40698198DEF070026F539 /* SHTitleSceneOSX.m in Sources */,
 				A67AA8FA198C9BF20024ED79 /* main.m in Sources */,
 				A67AA905198C9BF20024ED79 /* SHAppDelegate.m in Sources */,
 				A67AA928198C9DC50024ED79 /* SHGameScene.m in Sources */,
+				A6A40694198DDFEC0026F539 /* SHTitleScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +874,7 @@
 				A67AA91D198C9BF20024ED79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A67AA921198C9BF20024ED79 /* Build configuration list for PBXNativeTarget "ShadesOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -862,6 +883,7 @@
 				A67AA91F198C9BF20024ED79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -225,7 +225,7 @@ float randFloat()
         if(node == self.correctNode){
             color = self.currentColor;
         } else {
-            color = [self randomColor];
+            color = [SHGameScene randomColor];
         }
         
         [self animateSquare:node withIndex:i
@@ -300,7 +300,7 @@ float randFloat()
     }
 }
 
--(SKColor *)randomColor
++(SKColor *)randomColor
 {
     return [SKColor colorWithRed:randFloat()
                            green:randFloat()
@@ -316,7 +316,7 @@ float randFloat()
         [square removeFromParent];
     }
     
-    self.currentColor = [self randomColor];
+    self.currentColor = [SHGameScene randomColor];
     self.squares = [NSMutableArray array];
     self.rounds = 1;
     [self updateNodePositionsAndChangeColor:YES];

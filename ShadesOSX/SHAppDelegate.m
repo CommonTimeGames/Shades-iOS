@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Common Time Games. All rights reserved.
 //
 
+#import "SHTitleSceneOSX.h"
 #import "SHAppDelegate.h"
 #import "SHGameSceneOSX.h"
 
@@ -16,15 +17,12 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     /* Pick a size for the scene */
-    SKScene *scene = [SHGameSceneOSX sceneWithSize:CGSizeMake(1024, 768)];
+    SKScene *scene = [SHTitleSceneOSX sceneWithSize:CGSizeMake(1024, 768)];
 
     /* Set the scale mode to scale to fit the window */
     scene.scaleMode = SKSceneScaleModeAspectFit;
 
     [self.skView presentScene:scene];
-
-    self.skView.showsFPS = YES;
-    self.skView.showsNodeCount = YES;
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {

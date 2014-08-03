@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Common Time Games. All rights reserved.
 //
 
+#import "SHTitleSceneiOS.h"
 #import "SHViewController.h"
 #import "SHGameSceneiOS.h"
 
@@ -19,7 +20,7 @@
     SKView * skView = (SKView *)self.view;
     
     // Create and configure the scene.
-    SKScene * scene = [SHGameSceneiOS sceneWithSize:skView.bounds.size];
+    SKScene * scene = [SHTitleSceneiOS sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeResizeFill;
     
     // Present the scene.
