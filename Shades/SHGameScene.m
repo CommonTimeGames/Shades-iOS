@@ -329,9 +329,12 @@ float randFloat()
         [square removeFromParent];
     }
     
+    [self.quitLabel removeFromParent];
+    
     self.currentColor = [SHGameScene randomColor];
     self.squares = [NSMutableArray array];
     self.rounds = 1;
+    self.score = 0;
     [self updateNodePositionsAndChangeColor:YES];
     
     self.promptLabel.fontColor = [self colorForTextWithBackgroundColor:self.currentColor];
