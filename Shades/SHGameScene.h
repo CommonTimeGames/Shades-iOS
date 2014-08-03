@@ -37,9 +37,10 @@ typedef enum {
 @property (nonatomic) int score;
 
 @property (nonatomic) SKColor *currentColor;
-@property (nonatomic) SKNode *correctNode;
+@property (nonatomic) SKSpriteNode *correctNode;
 
 -(void)restart;
 -(void)nextRound;
+-(void)userDidTouchLocation: (CGPoint)location;
 
 @end

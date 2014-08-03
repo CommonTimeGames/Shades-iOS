@@ -75,7 +75,7 @@ float randFloat()
     if(!self.promptLabel){
         self.promptLabel = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next"];
         self.promptLabel.name = @"promptLabel";
-        self.promptLabel.zPosition = 1;
+        self.promptLabel.zPosition = 2;
         [self addChild:self.promptLabel];
     }
     
@@ -176,13 +176,39 @@ float randFloat()
                                                duration:duration];
     
     SKAction *moveGroup = [SKAction group:@[moveTo, shrink, changeColor]];
-    SKAction *sequence = [SKAction sequence:@[moveGroup, wait, moveToDest]];
+    
+    SKAction *changeState = [SKAction runBlock:^{
+        self.state = kChoosingColor;
+    }];
+    
+    SKAction *sequence = [SKAction sequence:@[moveGroup, wait, moveToDest, changeState]];
     
     [node runAction:sequence];
 }
 
+-(void)revealCorrectSquare
+{
+    NSTimeInterval duration = 0.5;
+    
+    CGPoint center = self.boardFrame.origin;
+    
+    SKAction *moveTo = [SKAction moveTo:center duration:duration];
+    
+    SKAction *wait = [SKAction waitForDuration:duration];
+    
+    SKAction *grow = [SKAction resizeToWidth:self.boardFrame.size.width
+                                        height:self.boardFrame.size.height
+                                      duration:duration];
+    
+    SKAction *sequence = [SKAction sequence:@[moveTo, wait, grow]];
+    self.correctNode.zPosition = 1;
+    [self.correctNode runAction:sequence];
+}
+
 -(void)nextRound
 {
+    self.state = kChangingColors;
+    
     self.rounds = MIN(MAX_ROUNDS, self.rounds + 1);
     [self growSquares];
     
@@ -223,7 +249,8 @@ float randFloat()
             self.promptLabel.hidden = NO;
             self.promptLabel.text = @"Game Over!";
             self.promptLabel.fontSize = 45;
-            self.promptLabel.fontColor = [SKColor whiteColor];
+            self.promptLabel.fontColor =
+                [self colorForTextWithBackgroundColor:self.currentColor];
             break;
         case kPaused:
             break;
@@ -251,7 +278,6 @@ float randFloat()
         self.promptLabel.hidden = YES;
         [self.promptSquare removeFromParent];
         [self nextRound];
-        self.state = kChoosingColor;
     }];
 }
 
@@ -266,7 +292,7 @@ float randFloat()
         node.position = CGPointZero;
         node.anchorPoint = CGPointZero;
         node.size = CGSizeZero;
-        node.name = [NSString stringWithFormat:@"square %d",
+        node.name = [NSString stringWithFormat:@"square %lu",
                      self.squares.count + 1];
         
         [self addChild:node];
@@ -319,6 +345,33 @@ float randFloat()
     NSLog(@"Brightness value: %f", brightness);
     
     return brightness >= 128 ? [SKColor blackColor] : [SKColor whiteColor];
+}
+
+-(void)userDidTouchLocation: (CGPoint)location
+{
+    SKNode *node = (SKSpriteNode *)[self nodeAtPoint:location];
+    
+    if(node){
+        NSLog(@"Touched node: %@", node.name);
+    }
+    
+    if(node == self.restartLabel){
+        [self restart];
+    } else if(self.state == kGameOver){
+        return;
+    } else if(node == self.promptSquare){
+        return;
+    } else if(node == self.correctNode
+              && self.state == kChoosingColor){
+        NSLog(@"Correct square!");
+        self.score++;
+        [self nextRound];
+    } else if([node.name rangeOfString:@"square"].location != NSNotFound
+              && self.state == kChoosingColor){
+        NSLog(@"Wrong square!");
+        [self revealCorrectSquare];
+        self.state = kGameOver;
+    }
 }
 
 @end
