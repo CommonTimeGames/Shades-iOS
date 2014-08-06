@@ -34,6 +34,10 @@ typedef enum {
 @property (nonatomic) int rowCount;
 @property (nonatomic) int columnCount;
 
+@property (strong, nonatomic) SKSpriteNode *twitterButton;
+@property (strong, nonatomic) SKSpriteNode *facebookButton;
+@property (strong, nonatomic) SKSpriteNode *gameCenterButton;
+
 @property (strong, nonatomic) SKLabelNode *promptLabel;
 @property (strong, nonatomic) SKLabelNode *quitLabel;
 @property (strong, nonatomic) SKLabelNode *scoreLabel;
@@ -57,5 +61,8 @@ typedef enum {
 -(void)quitGame;
 -(void)updateNodePositionsAndChangeColor:(BOOL)changeColor;
 -(void)userDidTouchLocation: (CGPoint)location;
+-(void)tweet;
+-(void)postToFacebook;
+-(BOOL)shouldShowSocialIcons;
 
 @end

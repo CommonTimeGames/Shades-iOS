@@ -20,4 +20,6 @@
 
 @interface SHGameSceneiOS : SHGameScene
 
+@property (strong, nonatomic) UIViewController *viewController;
+
 @end

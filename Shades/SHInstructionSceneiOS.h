@@ -20,4 +20,6 @@
 
 @interface SHInstructionSceneiOS : SHInstructionScene
 
+@property (strong, nonatomic) UIViewController *viewController;
+
 @end

@@ -30,9 +30,10 @@
     SKView * skView = (SKView *)self.view;
     
     // Create and configure the scene.
-    SKScene * scene = [SHTitleSceneiOS sceneWithSize:skView.bounds.size];
+    SHTitleSceneiOS * scene = [SHTitleSceneiOS sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeResizeFill;
-    
+    scene.viewController = self;
+
     // Present the scene.
     [skView presentScene:scene];
 }

@@ -39,4 +39,10 @@
     
     [self.view presentScene:scene transition:reveal];
 }
+
+-(BOOL)shouldShowSocialIcons
+{
+    return NO;
+}
+
 @end

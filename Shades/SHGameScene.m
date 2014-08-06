@@ -256,30 +256,89 @@ float randFloat()
         case kChangingColors:
             break;
         case kGameOver:
-            self.promptLabel.hidden = NO;
-            self.promptLabel.text = @"Game Over!";
-            self.promptLabel.fontSize = 45;
-            self.promptLabel.fontColor =
-                [self colorForTextWithBackgroundColor:self.currentColor];
-            
-            self.quitLabel = [SKLabelNode node];
-            self.quitLabel.fontName = @"Avenir Next";
-            self.quitLabel.text = @"Quit";
-            self.quitLabel.fontSize = 30;
-            self.quitLabel.fontColor = self.promptLabel.fontColor;
-            
-            self.quitLabel.position = CGPointMake(self.promptLabel.position.x,
-                                                  self.promptLabel.position.y - 45);
-            self.quitLabel.zPosition = 1;
-            
-            [self addChild:self.quitLabel];
-
+            [self addGameOverUI];
             break;
         case kPaused:
             break;
 
     }
 }
+
+-(void)addGameOverUI
+{
+    SKColor *textColor =
+    [self colorForTextWithBackgroundColor:self.currentColor];
+
+    self.promptLabel.hidden = NO;
+    self.promptLabel.text = @"Game Over!";
+    self.promptLabel.fontSize = 45;
+    self.promptLabel.fontColor = textColor;
+    
+    CGPoint quitLabelPosition =
+        CGPointMake(self.promptLabel.position.x,
+                    self.promptLabel.position.y - 45);
+    
+    
+    self.quitLabel = [self UILabelNodeWithText:@"Quit"
+                                         color:textColor
+                                      position:quitLabelPosition];
+    self.quitLabel.fontSize = 30;
+    
+    NSString *twitterImageName;
+    NSString *facebookImageName;
+    
+    if(textColor == [SKColor blackColor]){
+        twitterImageName =  @"twitter-blue";
+        facebookImageName = @"fb-blue";
+    } else {
+        twitterImageName =  @"twitter-white";
+        facebookImageName = @"fb-white";
+    }
+    
+    CGFloat tbHeight = 30.0;
+    
+    if([self shouldShowSocialIcons]){
+        self.twitterButton = [SKSpriteNode spriteNodeWithImageNamed:twitterImageName];
+        self.twitterButton.size = CGSizeMake(1.23 * tbHeight,tbHeight);
+        self.twitterButton.anchorPoint = CGPointZero;
+        self.twitterButton.position =
+        CGPointMake(self.boardFrame.origin.x + 20,
+                    self.boardFrame.origin.y + 20);
+        
+        
+        CGFloat facebookButtonSize = 30;
+        self.facebookButton = [SKSpriteNode spriteNodeWithImageNamed:facebookImageName];
+        self.facebookButton.size = CGSizeMake(facebookButtonSize, facebookButtonSize);
+        self.facebookButton.anchorPoint = CGPointZero;
+        self.facebookButton.position =
+        CGPointMake(self.boardFrame.origin.x
+                    + self.boardFrame.size.width - 20
+                    - facebookButtonSize,
+                    self.boardFrame.origin.y + 20);
+        
+        self.twitterButton.zPosition = 2;
+        self.facebookButton.zPosition = 2;
+        
+        [self addChild:self.twitterButton];
+        [self addChild:self.facebookButton];
+    }
+    [self addChild:self.quitLabel];
+}
+
+-(SKLabelNode *)UILabelNodeWithText: (NSString *)text color:(SKColor *)color position:(CGPoint )position
+{
+    SKLabelNode *label = [SKLabelNode node];
+    
+    label.fontName = @"Avenir Next";
+    label.text = text;
+    label.fontSize = 30;
+    label.fontColor = color;
+    label.zPosition = 1;
+    label.position = position;
+    
+    return label;
+}
+
 -(void)setScore:(int)score
 {
     _score = score;
@@ -341,6 +400,11 @@ float randFloat()
     
     [self.quitLabel removeFromParent];
     
+    if([self shouldShowSocialIcons]){
+        [self.twitterButton removeFromParent];
+        [self.facebookButton removeFromParent];
+    }
+    
     self.currentColor = [SHGameScene randomColor];
     self.squares = [NSMutableArray array];
     self.rounds = 1;
@@ -377,6 +441,19 @@ float randFloat()
 {
     
 }
+-(void)tweet
+{
+    
+}
+-(void)postToFacebook
+{
+    
+}
+
+-(BOOL)shouldShowSocialIcons
+{
+    return YES;
+}
 
 -(void)userDidTouchLocation: (CGPoint)location
 {
@@ -390,6 +467,10 @@ float randFloat()
         [self quitGame];
     } else if(node == self.restartLabel){
         [self restart];
+    } else if(node == self.twitterButton){
+        [self tweet];
+    } else if(node == self.facebookButton){
+        [self postToFacebook];
     } else if(self.state == kGameOver){
         return;
     } else if(node == self.promptSquare){
