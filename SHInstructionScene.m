@@ -46,7 +46,8 @@ NSString *const choosePrompt = @"Choose the Color!";
         self.instructionBackground.hidden = YES;
     }
     
-    self.promptLabel.hidden = YES;
+    self.promptLabel.hidden = NO;
+    self.timerLabel.hidden = NO;
     self.restartLabel.text = @"Back";
     self.scoreLabel.hidden = YES;
 }
