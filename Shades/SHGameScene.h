@@ -39,6 +39,7 @@ typedef enum {
 @property (strong, nonatomic) SKSpriteNode *gameCenterButton;
 
 @property (strong, nonatomic) SKLabelNode *promptLabel;
+@property (strong, nonatomic) SKLabelNode *timerLabel;
 @property (strong, nonatomic) SKLabelNode *quitLabel;
 @property (strong, nonatomic) SKLabelNode *scoreLabel;
 @property (strong, nonatomic) SKLabelNode *restartLabel;
