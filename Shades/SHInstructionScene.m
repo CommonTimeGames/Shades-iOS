@@ -56,12 +56,17 @@ NSString *const choosePrompt = @"Choose the Color!";
 {
     NSString *flashText;
     NSString *originalText = choosePrompt;
+    NSString *soundFile;
     
     if(correctSquare){
         flashText = @"Good Job!";
+        soundFile = @"correct.m4a";
     } else {
         flashText = @"Try Again!";
+        soundFile = @"gameover.mp3";
     }
+    
+    SKAction *playSound = [SKAction playSoundFileNamed:soundFile waitForCompletion:NO];
     
     SKAction *changeText = [SKAction runBlock:^{
         self.instructionLabel.text = flashText;
@@ -72,7 +77,7 @@ NSString *const choosePrompt = @"Choose the Color!";
     }];
     
     SKAction *wait = [SKAction waitForDuration:2.0];
-    SKAction *sequence = [SKAction sequence:@[changeText, wait, changeBack]];
+    SKAction *sequence = [SKAction sequence:@[playSound, changeText, wait, changeBack]];
     
     [self.instructionLabel removeAllActions];
     [self.instructionLabel runAction:sequence];
@@ -127,9 +132,10 @@ NSString *const choosePrompt = @"Choose the Color!";
                     [SKAction runBlock:^{
                         self.instructionLabel.text = @"You Are Ready!";
                     }];
-                
+                SKAction *playSound = [SKAction playSoundFileNamed:@"correct.m4a" waitForCompletion:NO];
+                SKAction *sequence = [SKAction sequence:@[playSound, changeText]];
                 [self.instructionLabel removeAllActions];
-                [self.instructionLabel runAction:changeText];
+                [self.instructionLabel runAction:sequence];
             }
         } else {
             [self userDidSelectCorrectSquare:NO];

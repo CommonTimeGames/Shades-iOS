@@ -276,6 +276,7 @@ float randFloat()
         case kChangingColors:
             break;
         case kGameOver:
+            [self runAction:[SKAction playSoundFileNamed:@"gameover.mp3" waitForCompletion:NO]];
             [self addGameOverUI];
             break;
         case kPaused:
@@ -525,6 +526,7 @@ float randFloat()
               && self.state == kChoosingColor){
         NSLog(@"Correct square!");
         self.score++;
+        [self runAction:[SKAction playSoundFileNamed:@"correct.m4a" waitForCompletion:NO]];
         [self nextRound];
     } else if([node.name rangeOfString:@"square"].location != NSNotFound
               && self.state == kChoosingColor){
