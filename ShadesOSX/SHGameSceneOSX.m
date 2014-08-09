@@ -30,6 +30,8 @@
 
 -(void)quitGame
 {
+    [super quitGame];
+    
     SKTransition *reveal = [SKTransition flipVerticalWithDuration:1.0];
     /* Pick a size for the scene */
     SKScene *scene = [SHTitleSceneOSX sceneWithSize:CGSizeMake(1024, 768)];

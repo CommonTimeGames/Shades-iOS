@@ -32,6 +32,7 @@
 
 -(void)quitGame
 {
+    [super quitGame];
     SKTransition *reveal = [SKTransition flipVerticalWithDuration:1.0];
     
     // Configure the view.

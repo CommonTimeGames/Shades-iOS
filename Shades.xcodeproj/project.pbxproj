@@ -50,6 +50,11 @@
 		A68198981995DD94005A49BD /* SHGameSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */; };
 		A68198991995DD94005A49BD /* SHTitleSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A4069A198DEFDF0026F539 /* SHTitleSceneiOS.m */; };
 		A681989A1995DD94005A49BD /* SHInstructionSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C766198EA77B00022E2A /* SHInstructionSceneiOS.m */; };
+		A68575321995E1CE00376B79 /* game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A68575301995E1CE00376B79 /* game.mp3 */; };
+		A68575331995E1CE00376B79 /* game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A68575301995E1CE00376B79 /* game.mp3 */; };
+		A68575341995E1CE00376B79 /* title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A68575311995E1CE00376B79 /* title.mp3 */; };
+		A68575351995E1CE00376B79 /* title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A68575311995E1CE00376B79 /* title.mp3 */; };
+		A68575371995E29400376B79 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68575361995E29400376B79 /* AVFoundation.framework */; };
 		A6A3C761198EA63F00022E2A /* SHInstructionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C760198EA63F00022E2A /* SHInstructionScene.m */; };
 		A6A3C764198EA71900022E2A /* SHInstructionSceneOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C763198EA71900022E2A /* SHInstructionSceneOSX.m */; };
 		A6A3C769198EA85700022E2A /* SHInstructionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C760198EA63F00022E2A /* SHInstructionScene.m */; };
@@ -126,6 +131,9 @@
 		A67AA925198C9D690024ED79 /* SHGameSceneOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGameSceneOSX.h; sourceTree = "<group>"; };
 		A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGameSceneOSX.m; sourceTree = "<group>"; };
 		A685752F1995DEE300376B79 /* Shades-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Shades-Prefix.pch"; sourceTree = "<group>"; };
+		A68575301995E1CE00376B79 /* game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game.mp3; path = Assets/Music/game.mp3; sourceTree = "<group>"; };
+		A68575311995E1CE00376B79 /* title.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = title.mp3; path = Assets/Music/title.mp3; sourceTree = "<group>"; };
+		A68575361995E29400376B79 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A6A3C75F198EA63F00022E2A /* SHInstructionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHInstructionScene.h; path = Shades/SHInstructionScene.h; sourceTree = "<group>"; };
 		A6A3C760198EA63F00022E2A /* SHInstructionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHInstructionScene.m; path = Shades/SHInstructionScene.m; sourceTree = "<group>"; };
 		A6A3C762198EA71900022E2A /* SHInstructionSceneOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHInstructionSceneOSX.h; sourceTree = "<group>"; };
@@ -145,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68575371995E29400376B79 /* AVFoundation.framework in Frameworks */,
 				A6068A5A1991C13D00A0D0A4 /* Social.framework in Frameworks */,
 				A678BCF71988A740006E559D /* CoreGraphics.framework in Frameworks */,
 				A678BCF91988A740006E559D /* UIKit.framework in Frameworks */,
@@ -187,6 +196,8 @@
 		A6068A4C19918D6200A0D0A4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A68575301995E1CE00376B79 /* game.mp3 */,
+				A68575311995E1CE00376B79 /* title.mp3 */,
 				A6068A5B1991D83500A0D0A4 /* fb-blue.png */,
 				A6068A5C1991D83500A0D0A4 /* fb-white.png */,
 				A6068A5D1991D83500A0D0A4 /* twitter-blue.png */,
@@ -223,6 +234,7 @@
 		A678BCF31988A740006E559D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A68575361995E29400376B79 /* AVFoundation.framework */,
 				A6068A591991C13D00A0D0A4 /* Social.framework */,
 				A678BCF41988A740006E559D /* Foundation.framework */,
 				A678BCF61988A740006E559D /* CoreGraphics.framework */,
@@ -481,12 +493,14 @@
 			files = (
 				A6068A631991D83500A0D0A4 /* twitter-blue.png in Resources */,
 				A6068A5F1991D83500A0D0A4 /* fb-blue.png in Resources */,
+				A68575321995E1CE00376B79 /* game.mp3 in Resources */,
 				A6068A611991D83500A0D0A4 /* fb-white.png in Resources */,
 				A678BD171988A740006E559D /* Images.xcassets in Resources */,
 				A678BD0D1988A740006E559D /* Main_iPad.storyboard in Resources */,
 				A6068A651991D83500A0D0A4 /* twitter-white.png in Resources */,
 				A678BD0A1988A740006E559D /* Main_iPhone.storyboard in Resources */,
 				A678BD011988A740006E559D /* InfoPlist.strings in Resources */,
+				A68575341995E1CE00376B79 /* title.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,12 +518,14 @@
 			files = (
 				A6068A641991D83500A0D0A4 /* twitter-blue.png in Resources */,
 				A6068A601991D83500A0D0A4 /* fb-blue.png in Resources */,
+				A68575331995E1CE00376B79 /* game.mp3 in Resources */,
 				A6068A621991D83500A0D0A4 /* fb-white.png in Resources */,
 				A67AA90A198C9BF20024ED79 /* Images.xcassets in Resources */,
 				A67AA8F8198C9BF20024ED79 /* InfoPlist.strings in Resources */,
 				A6068A661991D83500A0D0A4 /* twitter-white.png in Resources */,
 				A67AA8FE198C9BF20024ED79 /* Credits.rtf in Resources */,
 				A67AA900198C9BF20024ED79 /* MainMenu.xib in Resources */,
+				A68575351995E1CE00376B79 /* title.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

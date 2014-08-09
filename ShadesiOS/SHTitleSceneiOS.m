@@ -33,6 +33,8 @@
 
 -(void)playGame
 {
+    [super playGame];
+    
     SKTransition *reveal = [SKTransition doorwayWithDuration:1.0];
     
     // Configure the view.
@@ -48,6 +50,7 @@
 
 -(void)instructions
 {
+    [super instructions];
     SKTransition *reveal = [SKTransition doorwayWithDuration:1.0];
     
     // Configure the view.

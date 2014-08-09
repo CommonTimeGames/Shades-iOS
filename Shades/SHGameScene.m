@@ -16,6 +16,7 @@
  
  */
 
+#import <AVFoundation/AVFoundation.h>
 #import "SHGameScene.h"
 #define MAX_ROUNDS 15
 #define SHOW_COLOR_TIME 10.0
@@ -29,6 +30,7 @@ float randFloat()
 
 @property (nonatomic) NSTimeInterval timeRemaining;
 @property (nonatomic) CFTimeInterval lastTime;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -38,6 +40,7 @@ float randFloat()
 {
     self.backgroundColor = [SKColor blackColor];
     self.lastTime = CACurrentMediaTime();
+    [self playMusic];
     [self restart];
 }
 
@@ -481,8 +484,9 @@ float randFloat()
 
 -(void)quitGame
 {
-    
+    [self stopMusic];
 }
+
 -(void)tweet
 {
     
@@ -545,6 +549,27 @@ float randFloat()
     }
     
     self.lastTime = currentTime;
+}
+
+-(void)playMusic
+{
+    NSError *error;
+	NSURL *musicURL = [[NSBundle mainBundle] URLForResource:@"game" withExtension:@"mp3"];
+    
+    if(self.audioPlayer.isPlaying){
+        [self.audioPlayer stop];
+    }
+    
+	self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicURL error:&error];
+	self.audioPlayer.numberOfLoops = -1;
+	self.audioPlayer.volume = 0.40f;
+	[self.audioPlayer prepareToPlay];
+	[self.audioPlayer play];
+}
+
+-(void)stopMusic
+{
+    [self.audioPlayer stop];
 }
 
 @end

@@ -31,6 +31,8 @@
 
 -(void)playGame
 {
+    [super playGame];
+    
     SKTransition *reveal = [SKTransition doorwayWithDuration:1.0];
     /* Pick a size for the scene */
     SKScene *scene = [SHGameSceneOSX sceneWithSize:CGSizeMake(1024, 768)];
@@ -43,6 +45,8 @@
 
 -(void)instructions
 {
+    [super instructions];
+    
     SKTransition *reveal = [SKTransition doorwayWithDuration:1.0];
     /* Pick a size for the scene */
     SKScene *scene = [SHInstructionSceneOSX sceneWithSize:CGSizeMake(1024, 768)];

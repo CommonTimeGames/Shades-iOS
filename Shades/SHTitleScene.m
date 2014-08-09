@@ -16,8 +16,15 @@
  
  */
 
+#import <AVFoundation/AVFoundation.h>
 #import "SHTitleScene.h"
 #import "SHGameScene.h"
+
+@interface SHTitleScene ()
+
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+
+@end
 
 @implementation SHTitleScene
 
@@ -80,6 +87,8 @@
     SKAction *repeat = [SKAction repeatActionForever:sequence];
     
     [self runAction:repeat];
+    
+    [self performSelector:@selector(playMusic) withObject:self afterDelay:0.5];
 }
 
 -(void)generateSquareAtLocation:(CGPoint)location
@@ -119,13 +128,16 @@
 
 -(void)playGame
 {
-    NSLog(@"Change scene!");
+    NSLog(@"Start game!");
+    [self stopMusic];
 }
 
 -(void)instructions
 {
-    
+    NSLog(@"View instructions!");
+    [self stopMusic];
 }
+
 -(void)touchInLocation:(CGPoint) location
 {
     SKNode *node = [self nodeAtPoint:location];
@@ -142,6 +154,27 @@
     } else {
         [self generateSquareAtLocation:location];
     }
+}
+
+-(void)playMusic
+{
+    NSError *error;
+	NSURL *musicURL = [[NSBundle mainBundle] URLForResource:@"title" withExtension:@"mp3"];
+    
+    if(self.audioPlayer.isPlaying){
+        [self.audioPlayer stop];
+    }
+    
+	self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicURL error:&error];
+	self.audioPlayer.numberOfLoops = -1;
+	self.audioPlayer.volume = 0.40f;
+	[self.audioPlayer prepareToPlay];
+	[self.audioPlayer play];
+}
+
+-(void)stopMusic
+{
+    [self.audioPlayer stop];
 }
 
 @end
