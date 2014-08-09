@@ -22,10 +22,8 @@
 		A678BCFB1988A740006E559D /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BCFA1988A740006E559D /* SpriteKit.framework */; };
 		A678BD011988A740006E559D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A678BCFF1988A740006E559D /* InfoPlist.strings */; };
 		A678BD031988A740006E559D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD021988A740006E559D /* main.m */; };
-		A678BD071988A740006E559D /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD061988A740006E559D /* SHAppDelegate.m */; };
 		A678BD0A1988A740006E559D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A678BD081988A740006E559D /* Main_iPhone.storyboard */; };
 		A678BD0D1988A740006E559D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A678BD0B1988A740006E559D /* Main_iPad.storyboard */; };
-		A678BD101988A740006E559D /* SHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD0F1988A740006E559D /* SHViewController.m */; };
 		A678BD131988A740006E559D /* SHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD121988A740006E559D /* SHGameScene.m */; };
 		A678BD171988A740006E559D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A678BD161988A740006E559D /* Images.xcassets */; };
 		A678BD1E1988A740006E559D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BD1D1988A740006E559D /* XCTest.framework */; };
@@ -45,17 +43,19 @@
 		A67AA911198C9BF20024ED79 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67AA8EC198C9BF20024ED79 /* Cocoa.framework */; };
 		A67AA919198C9BF20024ED79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67AA917198C9BF20024ED79 /* InfoPlist.strings */; };
 		A67AA91B198C9BF20024ED79 /* ShadesOSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA91A198C9BF20024ED79 /* ShadesOSXTests.m */; };
-		A67AA924198C9C950024ED79 /* SHGameSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */; };
 		A67AA927198C9D690024ED79 /* SHGameSceneOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */; };
 		A67AA928198C9DC50024ED79 /* SHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD121988A740006E559D /* SHGameScene.m */; };
+		A68198961995DD94005A49BD /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD061988A740006E559D /* SHAppDelegate.m */; };
+		A68198971995DD94005A49BD /* SHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A678BD0F1988A740006E559D /* SHViewController.m */; };
+		A68198981995DD94005A49BD /* SHGameSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */; };
+		A68198991995DD94005A49BD /* SHTitleSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A4069A198DEFDF0026F539 /* SHTitleSceneiOS.m */; };
+		A681989A1995DD94005A49BD /* SHInstructionSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C766198EA77B00022E2A /* SHInstructionSceneiOS.m */; };
 		A6A3C761198EA63F00022E2A /* SHInstructionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C760198EA63F00022E2A /* SHInstructionScene.m */; };
 		A6A3C764198EA71900022E2A /* SHInstructionSceneOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C763198EA71900022E2A /* SHInstructionSceneOSX.m */; };
-		A6A3C768198EA78000022E2A /* SHInstructionSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C766198EA77B00022E2A /* SHInstructionSceneiOS.m */; };
 		A6A3C769198EA85700022E2A /* SHInstructionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C760198EA63F00022E2A /* SHInstructionScene.m */; };
 		A6A40693198DDE020026F539 /* SHTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A40692198DDE020026F539 /* SHTitleScene.m */; };
 		A6A40694198DDFEC0026F539 /* SHTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A40692198DDE020026F539 /* SHTitleScene.m */; };
 		A6A40698198DEF070026F539 /* SHTitleSceneOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A40696198DEE610026F539 /* SHTitleSceneOSX.m */; };
-		A6A4069B198DEFDF0026F539 /* SHTitleSceneiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A4069A198DEFDF0026F539 /* SHTitleSceneiOS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +89,6 @@
 		A678BCFE1988A740006E559D /* Shades-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Shades-Info.plist"; sourceTree = "<group>"; };
 		A678BD001988A740006E559D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A678BD021988A740006E559D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A678BD041988A740006E559D /* Shades-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Shades-Prefix.pch"; sourceTree = "<group>"; };
 		A678BD051988A740006E559D /* SHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SHAppDelegate.h; path = ../ShadesiOS/SHAppDelegate.h; sourceTree = "<group>"; };
 		A678BD061988A740006E559D /* SHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SHAppDelegate.m; path = ../ShadesiOS/SHAppDelegate.m; sourceTree = "<group>"; };
 		A678BD091988A740006E559D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -126,6 +125,7 @@
 		A67AA923198C9C950024ED79 /* SHGameSceneiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGameSceneiOS.m; path = ../ShadesiOS/SHGameSceneiOS.m; sourceTree = "<group>"; };
 		A67AA925198C9D690024ED79 /* SHGameSceneOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGameSceneOSX.h; sourceTree = "<group>"; };
 		A67AA926198C9D690024ED79 /* SHGameSceneOSX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGameSceneOSX.m; sourceTree = "<group>"; };
+		A685752F1995DEE300376B79 /* Shades-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Shades-Prefix.pch"; sourceTree = "<group>"; };
 		A6A3C75F198EA63F00022E2A /* SHInstructionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHInstructionScene.h; path = Shades/SHInstructionScene.h; sourceTree = "<group>"; };
 		A6A3C760198EA63F00022E2A /* SHInstructionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHInstructionScene.m; path = Shades/SHInstructionScene.m; sourceTree = "<group>"; };
 		A6A3C762198EA71900022E2A /* SHInstructionSceneOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHInstructionSceneOSX.h; sourceTree = "<group>"; };
@@ -260,10 +260,10 @@
 		A678BCFD1988A740006E559D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A685752F1995DEE300376B79 /* Shades-Prefix.pch */,
 				A678BCFE1988A740006E559D /* Shades-Info.plist */,
 				A678BCFF1988A740006E559D /* InfoPlist.strings */,
 				A678BD021988A740006E559D /* main.m */,
-				A678BD041988A740006E559D /* Shades-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			path = ../ShadesiOS;
@@ -529,14 +529,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A678BD031988A740006E559D /* main.m in Sources */,
+				A68198981995DD94005A49BD /* SHGameSceneiOS.m in Sources */,
+				A68198991995DD94005A49BD /* SHTitleSceneiOS.m in Sources */,
+				A68198971995DD94005A49BD /* SHViewController.m in Sources */,
+				A681989A1995DD94005A49BD /* SHInstructionSceneiOS.m in Sources */,
 				A678BD131988A740006E559D /* SHGameScene.m in Sources */,
+				A68198961995DD94005A49BD /* SHAppDelegate.m in Sources */,
 				A6A3C761198EA63F00022E2A /* SHInstructionScene.m in Sources */,
-				A678BD101988A740006E559D /* SHViewController.m in Sources */,
-				A6A3C768198EA78000022E2A /* SHInstructionSceneiOS.m in Sources */,
-				A67AA924198C9C950024ED79 /* SHGameSceneiOS.m in Sources */,
 				A6A40693198DDE020026F539 /* SHTitleScene.m in Sources */,
-				A678BD071988A740006E559D /* SHAppDelegate.m in Sources */,
-				A6A4069B198DEFDF0026F539 /* SHTitleSceneiOS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,8 +728,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nigel Brady (7A26H29422)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Shades/Shades-Prefix.pch";
-				INFOPLIST_FILE = "Shades/Shades-Info.plist";
+				GCC_PREFIX_HEADER = "ShadesiOS/Shades-Prefix.pch";
+				INFOPLIST_FILE = "ShadesiOS/Shades-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "BDC713F0-A5C8-4EE4-88CD-A5C97F36DD9C";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
@@ -745,8 +745,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nigel Brady (7A26H29422)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Shades/Shades-Prefix.pch";
-				INFOPLIST_FILE = "Shades/Shades-Info.plist";
+				GCC_PREFIX_HEADER = "ShadesiOS/Shades-Prefix.pch";
+				INFOPLIST_FILE = "ShadesiOS/Shades-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "BDC713F0-A5C8-4EE4-88CD-A5C97F36DD9C";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
