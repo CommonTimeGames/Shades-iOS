@@ -40,7 +40,7 @@
     
     // Create and configure the scene.
     SHTitleSceneiOS * scene = [SHTitleSceneiOS sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeResizeFill;
+    scene.scaleMode = SKSceneScaleModeFill;
     scene.viewController = self.viewController;
     
     [self.view presentScene:scene transition:reveal];

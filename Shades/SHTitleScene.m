@@ -105,7 +105,7 @@
         square.position = location;
     }
    
-    NSLog(@"Square position: %f, %f", square.position.x, square.position.y);
+    //NSLog(@"Square position: %f, %f", square.position.x, square.position.y);
     
     square.anchorPoint = CGPointZero;
     square.alpha = 0.0;

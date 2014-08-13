@@ -59,6 +59,7 @@
 		A685753A1995E9EB00376B79 /* gameover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A68575381995E9EB00376B79 /* gameover.mp3 */; };
 		A685754219965BFD00376B79 /* correct.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A685754119965BB300376B79 /* correct.m4a */; };
 		A685754319965BFD00376B79 /* correct.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A685754119965BB300376B79 /* correct.m4a */; };
+		A6857546199B0E7300376B79 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6857545199B0E7300376B79 /* iAd.framework */; };
 		A6A3C761198EA63F00022E2A /* SHInstructionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C760198EA63F00022E2A /* SHInstructionScene.m */; };
 		A6A3C764198EA71900022E2A /* SHInstructionSceneOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C763198EA71900022E2A /* SHInstructionSceneOSX.m */; };
 		A6A3C769198EA85700022E2A /* SHInstructionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3C760198EA63F00022E2A /* SHInstructionScene.m */; };
@@ -140,6 +141,7 @@
 		A68575361995E29400376B79 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A68575381995E9EB00376B79 /* gameover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gameover.mp3; path = Assets/Music/gameover.mp3; sourceTree = "<group>"; };
 		A685754119965BB300376B79 /* correct.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = correct.m4a; path = Assets/Music/correct.m4a; sourceTree = "<group>"; };
+		A6857545199B0E7300376B79 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		A6A3C75F198EA63F00022E2A /* SHInstructionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHInstructionScene.h; path = Shades/SHInstructionScene.h; sourceTree = "<group>"; };
 		A6A3C760198EA63F00022E2A /* SHInstructionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHInstructionScene.m; path = Shades/SHInstructionScene.m; sourceTree = "<group>"; };
 		A6A3C762198EA71900022E2A /* SHInstructionSceneOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHInstructionSceneOSX.h; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6857546199B0E7300376B79 /* iAd.framework in Frameworks */,
 				A68575371995E29400376B79 /* AVFoundation.framework in Frameworks */,
 				A6068A5A1991C13D00A0D0A4 /* Social.framework in Frameworks */,
 				A678BCF71988A740006E559D /* CoreGraphics.framework in Frameworks */,
@@ -242,6 +245,7 @@
 		A678BCF31988A740006E559D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6857545199B0E7300376B79 /* iAd.framework */,
 				A68575361995E29400376B79 /* AVFoundation.framework */,
 				A6068A591991C13D00A0D0A4 /* Social.framework */,
 				A678BCF41988A740006E559D /* Foundation.framework */,

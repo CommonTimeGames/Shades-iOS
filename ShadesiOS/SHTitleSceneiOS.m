@@ -42,7 +42,7 @@
     
     // Create and configure the scene.
     SHGameSceneiOS * scene = [SHGameSceneiOS sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeResizeFill;
+    scene.scaleMode = SKSceneScaleModeFill;
     scene.viewController = self.viewController;
     
     [self.view presentScene:scene transition:reveal];
@@ -60,7 +60,7 @@
     SHInstructionSceneiOS * scene =
         [SHInstructionSceneiOS sceneWithSize:skView.bounds.size];
     
-    scene.scaleMode = SKSceneScaleModeResizeFill;
+    scene.scaleMode = SKSceneScaleModeFill;
     scene.viewController = self.viewController;
     
     [self.view presentScene:scene transition:reveal];
