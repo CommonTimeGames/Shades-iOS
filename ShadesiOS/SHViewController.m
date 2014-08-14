@@ -38,10 +38,20 @@
     
     //Add iAd banner
     self.banner = [[ADBannerView alloc] initWithFrame:CGRectZero];
-    self.banner.delegate = self;
-    [self.banner sizeToFit];
-    self.canDisplayBannerAds = YES;
     
+    self.banner.requiredContentSizeIdentifiers =
+        [NSSet setWithObject:ADBannerContentSizeIdentifierPortrait];
+    
+    self.banner.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    self.banner.delegate = self;
+    
+    CGRect adFrame = self.banner.frame;
+    adFrame.origin.y = self.view.frame.size.height-self.banner.frame.size.height;
+    self.banner.frame = adFrame;
+    self.banner.hidden = YES;
+    
+    [skView addSubview:self.banner];
+
     // Create and configure the scene.
     SHTitleSceneiOS * scene = [SHTitleSceneiOS sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeFill;
