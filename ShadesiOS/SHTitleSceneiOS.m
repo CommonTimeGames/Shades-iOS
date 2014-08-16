@@ -16,10 +16,16 @@
  
  */
 
+#import "SHGameCenterManager.h"
 #import "SHInstructionSceneiOS.h"
 #import "SHTitleSceneiOS.h"
 #import "SHGameSceneiOS.h"
 
+@interface SHTitleSceneiOS ()
+
+@property (strong, nonatomic) SKLabelNode *gameCenterLabel;
+
+@end
 @implementation SHTitleSceneiOS
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -29,6 +35,35 @@
         NSLog(@"Touch location: %.1f, %.1f", location.x, location.y);
         [self touchInLocation:location];
     }
+}
+
+-(void)touchInLocation:(CGPoint)location
+{
+    SKNode *node = [self nodeAtPoint:location];
+    
+    if(node == self.gameCenterLabel){
+        NSLog(@"Launch Game Center!");
+        [[SHGameCenterManager sharedInstance] showLeaderboard];
+    } else {
+        [super touchInLocation:location];
+    }
+}
+
+-(void)didMoveToView:(SKView *)view
+{
+    [super didMoveToView:view];
+    
+    self.gameCenterLabel = [SKLabelNode node];
+    self.gameCenterLabel.fontName = @"Avenir Next";
+    self.gameCenterLabel.text = @"Game Center";
+    self.gameCenterLabel.fontSize = 30;
+    self.gameCenterLabel.position = CGPointMake(self.titleLabel.position.x,
+                                                 self.subTitleLabel.position.y - 170);
+    
+    self.gameCenterLabel.fontColor = [SKColor whiteColor];
+    self.gameCenterLabel.zPosition = 1;
+    
+    [self addChild:self.gameCenterLabel];
 }
 
 -(void)playGame

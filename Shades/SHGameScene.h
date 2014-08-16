@@ -65,5 +65,6 @@ typedef enum {
 -(void)tweet;
 -(void)postToFacebook;
 -(BOOL)shouldShowSocialIcons;
+-(void)gameOver;
 
 @end

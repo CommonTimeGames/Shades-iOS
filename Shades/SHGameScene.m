@@ -278,6 +278,7 @@ float randFloat()
         case kGameOver:
             [self runAction:[SKAction playSoundFileNamed:@"gameover.mp3" waitForCompletion:NO]];
             [self addGameOverUI];
+            [self gameOver];
             break;
         case kPaused:
             break;
@@ -573,5 +574,8 @@ float randFloat()
 {
     [self.audioPlayer stop];
 }
-
+-(void)gameOver
+{
+    
+}
 @end

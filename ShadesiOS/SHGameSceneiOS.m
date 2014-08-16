@@ -15,6 +15,7 @@
  # limitations under the License.
  
  */
+#import "SHGameCenterManager.h"
 #import <Social/Social.h>
 #import "SHTitleSceneiOS.h"
 #import "SHGameSceneiOS.h"
@@ -28,6 +29,11 @@
         NSLog(@"Touch location: %.1f, %.1f", location.x, location.y);
         [self userDidTouchLocation:location];
     }
+}
+
+-(void)gameOver
+{
+    [[SHGameCenterManager sharedInstance] submitScore:self.score];
 }
 
 -(void)quitGame

@@ -16,12 +16,15 @@
  
  */
 
+#import "SHGameCenterManager.h"
+#import "SHGameCenterManagerDelegate.h"
 #import "SHTitleSceneiOS.h"
 #import "SHViewController.h"
 #import "SHGameSceneiOS.h"
+#import <GameKit/GameKit.h>
 #import <iAd/iAd.h>
 
-@interface SHViewController () <ADBannerViewDelegate>
+@interface SHViewController () <ADBannerViewDelegate, SHGameCenterManagerDelegate>
 
 @property (nonatomic, strong) ADBannerView *banner;
 
@@ -29,12 +32,16 @@
 
 @implementation SHViewController
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
+    
+    //Configure Game Center Manager
+    SHGameCenterManager *manager = [SHGameCenterManager sharedInstance];
+    manager.delegate = self;
     
     //Add iAd banner
     self.banner = [[ADBannerView alloc] initWithFrame:CGRectZero];
@@ -59,14 +66,15 @@
 
     // Present the scene.
     [skView presentScene:scene];
+    [manager signIn];
 }
 
-- (BOOL)shouldAutorotate
+-(BOOL)shouldAutorotate
 {
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+-(NSUInteger)supportedInterfaceOrientations
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return UIInterfaceOrientationMaskPortrait;
@@ -75,13 +83,13 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
+-(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
     banner.hidden = NO;
 }
@@ -90,6 +98,23 @@
 {
     NSLog(@"Failed to receive ad: %@", [error localizedDescription]);
     banner.hidden = YES;
+}
+
+-(void)gameCenterManager:(SHGameCenterManager *)manager
+needsToAuthenticateWithViewController:(UIViewController *)controller{
+    [self presentViewController:controller animated:YES completion:NULL];
+}
+
+-(void)gameCenterManager:(SHGameCenterManager *)manager
+needsToDismissGameCenterController:(GKGameCenterViewController *)controller
+{
+    [controller dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(void)gameCenterManager:(SHGameCenterManager *)manager
+needsToPresentGameCenterController:(GKGameCenterViewController *)controller
+{
+    [self presentViewController:controller animated:YES completion:NULL];
 }
 
 @end

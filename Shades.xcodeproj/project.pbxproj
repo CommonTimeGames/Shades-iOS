@@ -16,6 +16,8 @@
 		A6068A641991D83500A0D0A4 /* twitter-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = A6068A5D1991D83500A0D0A4 /* twitter-blue.png */; };
 		A6068A651991D83500A0D0A4 /* twitter-white.png in Resources */ = {isa = PBXBuildFile; fileRef = A6068A5E1991D83500A0D0A4 /* twitter-white.png */; };
 		A6068A661991D83500A0D0A4 /* twitter-white.png in Resources */ = {isa = PBXBuildFile; fileRef = A6068A5E1991D83500A0D0A4 /* twitter-white.png */; };
+		A6234948199FC157004247A6 /* SHGameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6234947199FC157004247A6 /* SHGameCenterManager.m */; };
+		A623494B199FC43C004247A6 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A623494A199FC43C004247A6 /* GameKit.framework */; };
 		A678BCF51988A740006E559D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BCF41988A740006E559D /* Foundation.framework */; };
 		A678BCF71988A740006E559D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BCF61988A740006E559D /* CoreGraphics.framework */; };
 		A678BCF91988A740006E559D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A678BCF81988A740006E559D /* UIKit.framework */; };
@@ -91,6 +93,10 @@
 		A6068A5C1991D83500A0D0A4 /* fb-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fb-white.png"; path = "Assets/fb-white.png"; sourceTree = "<group>"; };
 		A6068A5D1991D83500A0D0A4 /* twitter-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-blue.png"; path = "Assets/twitter-blue.png"; sourceTree = "<group>"; };
 		A6068A5E1991D83500A0D0A4 /* twitter-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-white.png"; path = "Assets/twitter-white.png"; sourceTree = "<group>"; };
+		A6234946199FC157004247A6 /* SHGameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGameCenterManager.h; path = ShadesiOS/SHGameCenterManager.h; sourceTree = SOURCE_ROOT; };
+		A6234947199FC157004247A6 /* SHGameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGameCenterManager.m; path = ShadesiOS/SHGameCenterManager.m; sourceTree = SOURCE_ROOT; };
+		A6234949199FC268004247A6 /* SHGameCenterManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGameCenterManagerDelegate.h; path = ShadesiOS/SHGameCenterManagerDelegate.h; sourceTree = SOURCE_ROOT; };
+		A623494A199FC43C004247A6 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		A678BCF11988A740006E559D /* Shades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shades.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A678BCF41988A740006E559D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A678BCF61988A740006E559D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A623494B199FC43C004247A6 /* GameKit.framework in Frameworks */,
 				A6857546199B0E7300376B79 /* iAd.framework in Frameworks */,
 				A68575371995E29400376B79 /* AVFoundation.framework in Frameworks */,
 				A6068A5A1991C13D00A0D0A4 /* Social.framework in Frameworks */,
@@ -245,6 +252,7 @@
 		A678BCF31988A740006E559D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A623494A199FC43C004247A6 /* GameKit.framework */,
 				A6857545199B0E7300376B79 /* iAd.framework */,
 				A68575361995E29400376B79 /* AVFoundation.framework */,
 				A6068A591991C13D00A0D0A4 /* Social.framework */,
@@ -276,6 +284,9 @@
 				A6A4069A198DEFDF0026F539 /* SHTitleSceneiOS.m */,
 				A6A3C765198EA77B00022E2A /* SHInstructionSceneiOS.h */,
 				A6A3C766198EA77B00022E2A /* SHInstructionSceneiOS.m */,
+				A6234946199FC157004247A6 /* SHGameCenterManager.h */,
+				A6234947199FC157004247A6 /* SHGameCenterManager.m */,
+				A6234949199FC268004247A6 /* SHGameCenterManagerDelegate.h */,
 			);
 			name = iOS;
 			path = Shades;
@@ -565,6 +576,7 @@
 				A68198991995DD94005A49BD /* SHTitleSceneiOS.m in Sources */,
 				A68198971995DD94005A49BD /* SHViewController.m in Sources */,
 				A681989A1995DD94005A49BD /* SHInstructionSceneiOS.m in Sources */,
+				A6234948199FC157004247A6 /* SHGameCenterManager.m in Sources */,
 				A678BD131988A740006E559D /* SHGameScene.m in Sources */,
 				A68198961995DD94005A49BD /* SHAppDelegate.m in Sources */,
 				A6A3C761198EA63F00022E2A /* SHInstructionScene.m in Sources */,
@@ -757,13 +769,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nigel Brady (7A26H29422)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShadesiOS/Shades-Prefix.pch";
 				INFOPLIST_FILE = "ShadesiOS/Shades-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BDC713F0-A5C8-4EE4-88CD-A5C97F36DD9C";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -774,13 +786,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nigel Brady (7A26H29422)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShadesiOS/Shades-Prefix.pch";
 				INFOPLIST_FILE = "ShadesiOS/Shades-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BDC713F0-A5C8-4EE4-88CD-A5C97F36DD9C";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
