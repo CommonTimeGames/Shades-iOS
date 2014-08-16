@@ -71,6 +71,15 @@
     [self submitScoreToGameCenter:score];
 }
 
+-(int)currentHighScore
+{
+    NSInteger highScore =
+    [[NSUserDefaults standardUserDefaults]
+     integerForKey:kHighScoreDefaultKey];
+    
+    return highScore;
+}
+
 -(void)showLeaderboard
 {
     GKLocalPlayer *player = [GKLocalPlayer localPlayer];

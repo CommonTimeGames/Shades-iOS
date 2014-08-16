@@ -29,5 +29,6 @@
 -(void)showLeaderboard;
 -(void)submitScore:(int)score;
 -(void)showBannerWithTitle:(NSString *)title andMessage: (NSString *)message;
+-(int)currentHighScore;
 
 @end

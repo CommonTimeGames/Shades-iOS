@@ -20,6 +20,12 @@
 #import "SHTitleSceneiOS.h"
 #import "SHGameSceneiOS.h"
 
+@interface SHGameSceneiOS ()
+
+@property (strong, nonatomic) SKLabelNode *highScoreNode;
+
+@end
+
 @implementation SHGameSceneiOS
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -31,10 +37,43 @@
     }
 }
 
+-(void)restart
+{
+    [super restart];
+    
+    if(self.highScoreNode.parent){
+        [self.highScoreNode removeFromParent];
+    }
+}
 -(void)gameOver
 {
-    [[SHGameCenterManager sharedInstance] submitScore:self.score];
+    SHGameCenterManager *manager = [SHGameCenterManager sharedInstance];
+    [manager submitScore:self.score];
+    
+    self.highScoreNode = [SKLabelNode node];
+    self.highScoreNode.text = [NSString stringWithFormat:@"High Score: %d",
+                               [manager currentHighScore]];
+    
+    CGPoint highScoreNodePosition =
+    CGPointMake(self.promptLabel.position.x,
+                self.promptLabel.position.y - 45);
+    
+    CGPoint quitLabelPosition =
+    CGPointMake(self.promptLabel.position.x,
+                self.promptLabel.position.y - 90);
+
+    
+    self.highScoreNode.position = highScoreNodePosition;
+    self.highScoreNode.fontColor = self.promptLabel.fontColor;
+    self.highScoreNode.fontName = @"Avenir Next";
+    self.highScoreNode.fontSize = 30;
+    self.highScoreNode.zPosition = 2;
+    
+    self.quitLabel.position = quitLabelPosition;
+    
+    [self addChild:self.highScoreNode];
 }
+
 
 -(void)quitGame
 {
