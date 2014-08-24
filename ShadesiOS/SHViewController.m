@@ -43,6 +43,21 @@
     SHGameCenterManager *manager = [SHGameCenterManager sharedInstance];
     manager.delegate = self;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pause:)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pause:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(resume:)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
+
     //Add iAd banner
     self.banner = [[ADBannerView alloc] initWithFrame:CGRectZero];
     
@@ -72,6 +87,20 @@
 -(BOOL)shouldAutorotate
 {
     return YES;
+}
+
+-(void)pause:(NSNotification *)note
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    SKView * skView = (SKView *)self.view;
+    skView.paused = YES;
+}
+
+-(void)resume:(NSNotification *)note
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    SKView * skView = (SKView *)self.view;
+    skView.paused = NO;
 }
 
 -(NSUInteger)supportedInterfaceOrientations
