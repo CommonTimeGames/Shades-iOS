@@ -35,7 +35,7 @@
     self.titleLabel.text = @"Shades:";
     self.titleLabel.fontSize = 60;
     self.titleLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                           CGRectGetMidY(self.frame) + 50);
+                                           CGRectGetMidY(self.frame) + 80);
     
     self.titleLabel.fontColor = [SKColor whiteColor];
     self.titleLabel.zPosition = 1;

@@ -18,7 +18,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "SHGameScene.h"
-#define MAX_ROUNDS 15
+#define MAX_ROUNDS 10
 #define SHOW_COLOR_TIME 10.0
 
 float randFloat()
